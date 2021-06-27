@@ -1,3 +1,12 @@
+:root {
+  --background-color: #DDDDDD;
+  --tab-active-color: #6AEBFD;
+  --card-shadow: 0 0 40px -10px rgba(0, 0, 0, 0.01);
+  --heading-color: #36455E;
+  --body-color: #242424;
+  --footer-bg-color: #17232E;
+}
+
 html,
 body {
   padding: 0;
@@ -17,59 +26,14 @@ a {
   padding: 0;
 }
 
-/* .container {} */
+
+/* task styles */
 .row {
   display: flex;
   flex-direction: row; /* by default */
   justify-content: space-around;
   flex-flow: wrap;
 }
-/* .card {
-  width: 20%;
-  background-color: #fff;
-  border: 1px solid #ccc;
-  margin-bottom: 50px;
-  transition: 0.3s;
-} */
-/* .card .card-header {
-  text-align: center;
-  padding: 50px 10px;
-  background: linear-gradient(to right, #ff416c, #ff4b2b);
-  color: #fff;
-}
-.card .card-body {
-  padding: 30px 20px;
-  text-align: center;
-  font-size: 18px;
-}
-.card .card-body .btn {
-  display: block;
-  color: #fff;
-  text-align: center;
-  background: linear-gradient(to right, #ff416c, #ff4b2b);
-  margin-top: 30px;
-  text-decoration: none;
-  padding: 10px 5px;
-}
-
-.card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 40px -10px rgba(0, 0, 0, 0.25);
-} */
-
-/* responsive query */
-/* @media screen and (max-width: 1024px) {
-  .card{ width: 40%;}
-} */
-/* @media screen and (max-width: 1000px) {
-  .card{ width: 40%;}
-} */
-/* @media screen and (max-width: 620px) {
-  .container { width: 100%; }
-  .card { width: 80%;}
-} */
-
-/* task styles */
 
 .container {
   max-width: 1200px;
@@ -82,6 +46,7 @@ a {
   margin-bottom: 45px;
 }
 .tabs-container .tab {
+  text-transform: uppercase;
   height: 26px;
   display: flex;
   align-items: center;
@@ -98,15 +63,15 @@ a {
   text-align: left;
   color: #181818;
   cursor: pointer;
-  background-color: #DDDDDD;
+  background-color: var(--background-color);
 
   margin-right: 15px;
 }
 .tabs-container .tab:hover {
-  background-color: #6AEBFD;
+  background-color: var(--tab-active-color);
 }
 .tabs-container .tab.active {
-  background-color: #6AEBFD;
+  background-color: var(--tab-active-color);
 }
 
 .card {
@@ -116,18 +81,18 @@ a {
 }
 .card:hover {
   transform: scale(1.02);
-  box-shadow: 0 0 40px -10px rgba(0, 0, 0, 0.01);
+  box-shadow: var(--card-shadow);
 }
 .card .media {
   width: 100%;
   height: 260px;
-  background-color: #DDDDDD;
+  background-color: var(--background-color);
   border-radius: 5px;
 }
-.card .card-header- {
+.card .card-header {
   margin-top: 22px;
 }
-.card .card-header- h2 {
+.card .card-header h2 {
   font-family: IBM Plex Serif;
   font-size: 16px;
   font-style: normal;
@@ -135,7 +100,7 @@ a {
   line-height: 21px;
   letter-spacing: 0.08em;
   text-align: left;
-  color: #36455E;
+  color: var(--heading-color);
 }
 .card .card-body p {
   font-family: IBM Plex Serif;
@@ -145,10 +110,19 @@ a {
   line-height: 33px;
   letter-spacing: 0em;
   text-align: left;
-  color: #242424;
+  color: var(--body-color);
+  margin-top: 6px;
 }
 
 /* responsive media quries */
+@media screen and (max-width: 500px) {
+  .tabs-container {
+    flex-direction: column;
+  }
+  .tabs-container .tab {
+    margin-bottom: 20px;
+  }
+}
 @media screen and (max-width: 1198px) {
   .card {
     width: 325px;
@@ -162,5 +136,185 @@ a {
 @media screen and (max-width: 768px) {
   .card {
     width: 285px;
+  }
+}
+
+/* Footer design */
+.footer {
+  height: 400px;
+  width: 100%;
+  background: var(--footer-bg-color);
+}
+.footer .footer-columns-container {
+  max-width: 1076px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 76px;
+  height: 340px;
+  flex-flow: wrap;
+}
+
+.footer-columns-container .footer-column {
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+  min-width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  /* width: 400px; */
+}
+.footer-column h3 {
+  font-family: IBM Plex Serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 30px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: #D6DEE0;
+}
+.footer-column a {
+  font-family: IBM Plex Serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 30px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: #86969E;
+  margin-top: 6px;
+}
+.footer .company-info-container {
+  height: 60px;
+  margin-top: auto;
+  max-width: 1000px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.footer .company-info-container p {
+  font-family: IBM Plex Serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 30px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: #EEEEEE;
+}
+
+.company-info-container img:first-of-type {
+  margin-right: 12px;
+}
+
+@media screen and (max-width: 460px) {
+  .footer .footer-columns-container {
+    padding-top: 20px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .footer-columns-container .footer-column {
+    border-bottom: 1px solid var(--background-color);
+    margin-bottom: 10px;
+  }
+}
+
+/* trail section */
+.trail-section-container {
+  height: 377px;
+  width: 100%;
+  background-color: #F3F9FC;
+  padding-top: 85px;
+}
+.trail-section-container .trail-info {
+  max-width: 625px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.trail-info h2 {
+  font-family: IBM Plex Serif;
+  font-size: 39px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 34px;
+  letter-spacing: 0em;
+  text-align: center;
+}
+.trail-info p {
+  margin-top: 32px;
+  font-family: IBM Plex Serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 34px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: #242424;
+}
+
+.trail-info button {
+  margin-top: 35px;
+  height: 54px;
+  width: 440px;
+  border-radius: 50px;
+  background-color: #36455E;
+  border: none;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  color: #fff;
+  cursor: pointer;
+
+  font-family: IBM Plex Serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 21px;
+  letter-spacing: 0em;
+}
+.trail-info button:focus {
+  outline: none;
+}
+
+@media screen and (max-width: 630px) {
+  .trail-section-container .trail-info {
+    max-width: 500px;
+  }
+}
+@media screen and (max-width: 530px) {
+  .trail-section-container .trail-info {
+    max-width: 400px;
+  }
+  .trail-info h2 {
+    line-height: 50px;
+  }
+  .trail-info button {
+    width: 240px;
+  }
+  .trail-section-container {
+    padding-top: 25px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .trail-section-container .trail-info {
+    max-width: 200px;
+  }
+  .trail-info h2 {
+    line-height: 50px;
+  }
+  .trail-info button {
+    width: 150px;
+  }
+  .trail-section-container {
+    padding-top: 25px;
+    height: 577px;
   }
 }
